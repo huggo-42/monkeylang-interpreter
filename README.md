@@ -56,5 +56,18 @@ represent return statements in our AST.
 
 # Implementing the Pratt Parser
 
-
 2.7 - How Pratt Parsing works
+
+## Grouped Expressions
+Added test cases to TestOperatorPrecedenceParsing.
+registerPrefix for LPAREN
+Created parseGroupedExpression
+
+## If Expressions
+In monkey, if-else-conditionals are expressions. That means that they produce
+a value.
+```
+let foobar = if (x > y) { x } else { y };
+```
+if (<condition>) <consequence> else <alternative>
+
