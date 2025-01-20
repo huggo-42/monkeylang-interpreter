@@ -71,3 +71,30 @@ let foobar = if (x > y) { x } else { y };
 ```
 if (<condition>) <consequence> else <alternative>
 
+## Function Literals
+```
+fn(x, y) {
+    return x + y;
+}
+```
+abstract structure:
+`fn <parameter> <block statement>`
+
+parameters: are just a list of identifiers that are comma-separeted and
+surrounded by parentheses
+`<parameter one>, <parameter two>, <parameter three>, ...`
+which can also be empty
+`fn() { return foobar + barfoo }`
+
+function literal as the expression in a let statement
+`let myFunction = fn(x, y) { return x + y; }`
+
+function literal as the expression in a return statement inside another
+function literal
+```fn() {
+    return fn(x, y) { return x > y; };
+}
+```
+
+function literal as an argument when calling another function
+`myFunc(x, y, fn(x, y) { return x > y; })`
